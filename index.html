@@ -4,10 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Donation Addresses</title>
+    <script>
+        function redirectToCryptoWallet() {
+            const cryptoAddresses = {
+                BTC: "bc1qlr9ev6uu25cnrj2thkgky9yemdtna38ngc7fv2",
+                ETH: "0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD",
+                LTC: "ltc1qyx68ha4jqv6esty8mmunvzz63eusq6meq4hc3d",
+                DOGE: "DQ2dMKBVmy1QVubrpY94aU92So9fCJ1eZT",
+                // Add more addresses here...
+            };
+
+            const userAgent = navigator.userAgent;
+
+            if (userAgent.includes("Bitcoin")) {
+                window.location.href = `bitcoin:${cryptoAddresses.BTC}`;
+            } else if (userAgent.includes("Ethereum")) {
+                window.location.href = `ethereum:${cryptoAddresses.ETH}`;
+            } else if (userAgent.includes("Litecoin")) {
+                window.location.href = `litecoin:${cryptoAddresses.LTC}`;
+            } else if (userAgent.includes("Dogecoin")) {
+                window.location.href = `dogecoin:${cryptoAddresses.DOGE}`;
+            } else {
+                document.getElementById("crypto-list").style.display = "block";
+            }
+        }
+
+        window.onload = redirectToCryptoWallet;
+    </script>
+    <style>
+        #crypto-list {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <h1>Crypto Donation Addresses</h1>
-    <ul>
+    <ul id="crypto-list">
         <li>
             <strong>Bitcoin (BTC):</strong>
             <br>bc1qlr9ev6uu25cnrj2thkgky9yemdtna38ngc7fv2
@@ -131,134 +163,128 @@
         <li>
             <strong>Avalanche (AVAX):</strong>
             <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
-            <br><img src="avax_qr_code
-            <li>
-                <strong>Avalanche (AVAX):</strong>
-                <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
-                <br><img src="avax_qr_code.png" alt="Avalanche QR Code">
-            </li>
-            <li>
-                <strong>Uniswap (UNI):</strong>
-                <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
-                <br><img src="uni_qr_code.png" alt="Uniswap QR Code">
-            </li>
-            <li>
-                <strong>Wrapped Bitcoin (WBTC):</strong>
-                <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
-                <br><img src="wbtc_qr_code.png" alt="Wrapped Bitcoin QR Code">
-            </li>
-            <li>
-                <strong>Chainlink (LINK):</strong>
-                <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
-                <br><img src="link_qr_code.png" alt="Chainlink QR Code">
-            </li>
-            <li>
-                <strong>Cosmos (ATOM):</strong>
-                <br>cosmos1stmmt2jrz4nc25elky2p3qm0cmnzrmrczlgsh9
-                <br><img src="atom_qr_code.png" alt="Cosmos QR Code">
-            </li>
-            <li>
-                <strong>Algorand (ALGO):</strong>
-                <br>GYBJYPCCRT5PCVW3NFIN3RDKGUS56KOV7LWJYS3
-                <br><img src="algo_qr_code.png" alt="Algorand QR Code">
-            </li>
-            <li>
-                <strong>The Open Network (TON):</strong>
-                <br>UQCp7CujOxedPG3oWpKx7WJxlYKhhht7XK-jSltnj3cv0gMo
-                <br><img src="ton_qr_code.png" alt="TON QR Code">
-            </li>
-            <li>
-                <strong>Internet Computer (ICP):</strong>
-                <br>b60ab62e32ac78d66d88da65db0a8797855f6cae7fc896c6fef5c1a458b46d4b
-                <br><img src="icp_qr_code.png" alt="ICP QR Code">
-            </li>
-            <li>
-                <strong>Filecoin (FIL):</strong>
-                <br>f1fwechg3nvqeje3wkaekah2ndhdmfbumituehzcq
-                <br><img src="fil_qr_code.png" alt="Filecoin QR Code">
-            </li>
-            <li>
-                <strong>Helium (HNT):</strong>
-                <br>CLVp1JKfxez65UKzk2ZZi6u2pLEpB3xffHHEA5dLmeBC
-                <br><img src="hnt_qr_code.png" alt="Helium QR Code">
-            </li>
-            <li>
-                <strong>EOS:</strong>
-                <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
-                <br><img src="eos_qr_code.png" alt="EOS QR Code">
-            </li>
-            <li>
-                <strong>Aave (AAVE):</strong>
-                <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
-                <br><img src="aave_qr_code.png" alt="Aave QR Code">
-            </li>
-            <li>
-                <strong>Flow (FLOW):</strong>
-                <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
-                <br><img src="flow_qr_code.png" alt="Flow QR Code">
-            </li>
-            <li>
-                <strong>Kusama (KSM):</strong>
-                <br>J6pb7fsi3ty4faNd7wawKNJJyYEW5D4wcXbzHZucLRA4kr2
-                <br><img src="ksm_qr_code.png" alt="Kusama QR Code">
-            </li>
-            <li>
-                <strong>Chiliz (CHZ):</strong>
-                <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
-                <br><img src="chz_qr_code.png" alt="Chiliz QR Code">
-            </li>
-            <li>
-                <strong>Quant (QNT):</strong>
-                <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
-                <br><img src="qnt_qr_code.png" alt="Quant QR Code">
-            </li>
-            <li>
-                <strong>BitTorrent (BTT):</strong>
-                <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
-                <br><img src="btt_qr_code.png" alt="BitTorrent QR Code">
-            </li>
-            <li>
-                <strong>Kava (KAVA):</strong>
-                <br>kava1vxekjxvsjttnlaa7l7njysat8r7z7rruc9qfqp
-                <br><img src="kava_qr_code.png" alt="Kava QR Code">
-            </li>
-            <li>
-                <strong>PancakeSwap (CAKE):</strong>
-                <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
-                <br><img src="cake_qr_code.png" alt="PancakeSwap QR Code">
-            </li>
-            <li>
-                <strong>Cronos (CRO):</strong>
-                <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
-                <br><img src="cro_qr_code.png" alt="Cronos QR Code">
-            </li>
-            <li>
-                <strong>Stacks (STX):</strong>
-                <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
-                <br><img src="stx_qr_code.png" alt="Stacks QR Code">
-            </li>
-            <li>
-                <strong>Enjin Coin (ENJ):</strong>
-                <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
-                <br><img src="enj_qr_code.png" alt="Enjin Coin QR Code">
-            </li>
-            <li>
-                <strong>Holo (HOT):</strong>
-                <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
-                <br><img src="hot_qr_code.png" alt="Holo QR Code">
-            </li>
-            <li>
-                <strong>Yearn.Finance (YFI):</strong>
-                <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
-                <br><img src="yfi_qr_code.png" alt="Yearn.Finance QR Code">
-            </li>
-            <li>
-                <strong>Compound (COMP):</strong>
-                <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
-                <br><img src="comp_qr_code.png" alt="Compound QR Code">
-            </li>
-           <li> 
-        </ul>
-    </body>
-    </html>
-    
+            <br><img src="avax_qr_code.png" alt="Avalanche QR Code">
+        </li>
+        <li>
+            <strong>Uniswap (UNI):</strong>
+            <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
+            <br><img src="uni_qr_code.png" alt="Uniswap QR Code">
+        </li>
+        <li>
+            <strong>Wrapped Bitcoin (WBTC):</strong>
+            <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
+            <br><img src="wbtc_qr_code.png" alt="Wrapped Bitcoin QR Code">
+        </li>
+        <li>
+            <strong>Chainlink (LINK):</strong>
+            <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
+            <br><img src="link_qr_code.png" alt="Chainlink QR Code">
+        </li>
+        <li>
+            <strong>Cosmos (ATOM):</strong>
+            <br>cosmos1stmmt2jrz4nc25elky2p3qm0cmnzrmrczlgsh9
+            <br><img src="atom_qr_code.png" alt="Cosmos QR Code">
+        </li>
+        <li>
+            <strong>Algorand (ALGO):</strong>
+            <br>GYBJYPCCRT5PCVW3NFIN3RDKGUS56KOV7LWJYS3
+            <br><img src="algo_qr_code.png" alt="Algorand QR Code">
+        </li>
+        <li>
+            <strong>The Open Network (TON):</strong>
+            <br>UQCp7CujOxedPG3oWpKx7WJxlYKhhht7XK-jSltnj3cv0gMo
+            <br><img src="ton_qr_code.png" alt="TON QR Code">
+        </li>
+        <li>
+            <strong>Internet Computer (ICP):</strong>
+            <br>b60ab62e32ac78d66d88da65db0a8797855f6cae7fc896c6fef5c1a458b46d4b
+            <br><img src="icp_qr_code.png" alt="ICP QR Code">
+        </li>
+        <li>
+            <strong>Filecoin (FIL):</strong>
+            <br>f1fwechg3nvqeje3wkaekah2ndhdmfbumituehzcq
+            <br><img src="fil_qr_code.png" alt="Filecoin QR Code">
+        </li>
+        <li>
+            <strong>Helium (HNT):</strong>
+            <br>CLVp1JKfxez65UKzk2ZZi6u2pLEpB3xffHHEA5dLmeBC
+            <br><img src="hnt_qr_code.png" alt="Helium QR Code">
+        </li>
+        <li>
+            <strong>EOS:</strong>
+            <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
+            <br><img src="eos_qr_code.png" alt="EOS QR Code">
+        </li>
+        <li>
+            <strong>Aave (AAVE):</strong>
+            <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
+            <br><img src="aave_qr_code.png" alt="Aave QR Code">
+        </li>
+        <li>
+            <strong>Flow (FLOW):</strong>
+            <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
+            <br><img src="flow_qr_code.png" alt="Flow QR Code">
+        </li>
+        <li>
+            <strong>Kusama (KSM):</strong>
+            <br>J6pb7fsi3ty4faNd7wawKNJJyYEW5D4wcXbzHZucLRA4kr2
+            <br><img src="ksm_qr_code.png" alt="Kusama QR Code">
+        </li>
+        <li>
+            <strong>Chiliz (CHZ):</strong>
+            <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
+            <br><img src="chz_qr_code.png" alt="Chiliz QR Code">
+        </li>
+        <li>
+            <strong>Quant (QNT):</strong>
+            <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
+            <br><img src="qnt_qr_code.png" alt="Quant QR Code">
+        </li>
+        <li>
+            <strong>BitTorrent (BTT):</strong>
+            <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
+            <br><img src="btt_qr_code.png" alt="BitTorrent QR Code">
+        </li>
+        <li>
+            <strong>Kava (KAVA):</strong>
+            <br>kava1vxekjxvsjttnlaa7l7njysat8r7z7rruc9qfqp
+            <br><img src="kava_qr_code.png" alt="Kava QR Code">
+        </li>
+        <li>
+            <strong>PancakeSwap (CAKE):</strong>
+            <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
+            <br><img src="cake_qr_code.png" alt="PancakeSwap QR Code">
+        </li>
+        <li>
+            <strong>Cronos (CRO):</strong>
+            <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
+            <br><img src="cro_qr_code.png" alt="Cronos QR Code">
+        </li>
+        <li>
+            <strong>Stacks (STX):</strong>
+            <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
+            <br><img src="stx_qr_code.png" alt="Stacks QR Code">
+        </li>
+        <li>
+            <strong>Enjin Coin (ENJ):</strong>
+            <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
+            <br><img src="enj_qr_code.png" alt="Enjin Coin QR Code">
+        </li>
+        <li>
+            <strong>Holo (HOT):</strong>
+            <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
+            <br><img src="hot_qr_code.png" alt="Holo QR Code">
+        </li>
+        <li>
+            <strong>Yearn.Finance (YFI):</strong>
+            <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
+            <br><img src="yfi_qr_code.png" alt="Yearn.Finance QR Code">
+        </li>
+        <li>
+            <strong>Compound (COMP):</strong>
+            <br>0xd9c5D05C3aaeFF79aDa3D8d8a66B189fD0D961aD
+            <br><img src="comp_qr_code.png" alt="Compound QR Code">
+        </li>
+    </ul>
+</body>
+</html>
